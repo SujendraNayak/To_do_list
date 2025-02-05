@@ -1,34 +1,22 @@
 import { Component } from '@angular/core';
-import {Todo} from '../../Todo'
+import { CommonModule } from '@angular/common'; // ✅ Import CommonModule
+import { Todo } from '../../Todo';
+
 @Component({
   selector: 'app-todos',
-  imports: [],
+  standalone: true, // ✅ Ensure it's a standalone component
+  imports: [CommonModule], // ✅ Add CommonModule for *ngFor
   templateUrl: './todos.component.html',
-  styleUrl: './todos.component.css'
+  styleUrls: ['./todos.component.css']
 })
 export class TodosComponent {
   todos: Todo[];
-  constructor() { 
-    this.todos=[
-      {
-        sno:1,
-        title:"this title",
-        desc:"Descrption",
-        active:true
-      },
-      {
-        sno:2,
-        title:"this title",
-        desc:"Descrption",
-        active:true
-      },
-      {
-        sno:3,
-        title:"this tile",
-        desc:"Descrption",
-        active:true
-      }
-    ]
-  }
 
+  constructor() {
+    this.todos = [
+      { sno: 1, title: "this title", desc: "Description", active: true },
+      { sno: 2, title: "this title", desc: "Description", active: true },
+      { sno: 3, title: "this title", desc: "Description", active: true }
+    ];
+  }
 }
