@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // ✅ Import CommonModule
 import { Todo } from '../../Todo';
+import { TodoItemComponent } from "../todo-item/todo-item.component";
 
 @Component({
   selector: 'app-todos',
   standalone: true, // ✅ Ensure it's a standalone component
-  imports: [CommonModule], // ✅ Add CommonModule for *ngFor
+  imports: [CommonModule, TodoItemComponent], // ✅ Add CommonModule for *ngFor
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
 })
